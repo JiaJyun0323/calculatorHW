@@ -1,0 +1,79 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="498" Width="856"
+        Loaded="Window_Loaded">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Margin="0,0,0,-5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="315*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="3" Margin="21,-19,389,-27" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
+            <Grid.BindingGroup>
+                <BindingGroup/>
+            </Grid.BindingGroup>
+        </Grid>
+
+
+        <UniformGrid HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Columns="3"
+                     Rows="3" 
+                     Width="308" Grid.ColumnSpan="3" Margin="38,104,0,0" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Height="282">
+            <UniformGrid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="36" />
+                    <Setter Property="Height" Value="80" />
+                    <Setter Property="Margin" Value="4" />
+                    <Setter Property="Width" Value="90" />
+                    <EventSetter Event="Click" Handler="Button_Click"/>
+                </Style>
+
+            </UniformGrid.Resources>
+            <UniformGrid.BindingGroup>
+                <BindingGroup/>
+            </UniformGrid.BindingGroup>
+            <Button Content="7"/>
+            <Button Content="8"/>
+            <Button Content="9"/>
+
+            <Button Content="4"/>
+            <Button Content="5"/>
+            <Button Content="6"/>
+
+            <Button Content="1"/>
+            <Button Content="2"/>
+            <Button Content="3"/>
+
+        </UniformGrid>
+
+
+
+        <Label x:Name="perLabel" Content="0" Grid.Column="2" Margin="312,31,50,400" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <Label x:Name="posLabel" Content="0" Grid.Column="2" Margin="312,109,50,322" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <Label x:Name="binaryLabel" Content="0" Grid.Column="2" Margin="312,190,50,242" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <Label x:Name="decimalLable" Content="0" Grid.Column="2" Margin="312,264,50,167" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <Label Grid.Column="2" Content="前序式" HorizontalAlignment="Left" Margin="246,40,0,0" VerticalAlignment="Top" Width="61"/>
+        <Label Grid.Column="2" Content="後序式" HorizontalAlignment="Left" Margin="246,122,0,0" VerticalAlignment="Top" Width="61"/>
+        <Label Grid.Column="2" Content="二進制" HorizontalAlignment="Left" Margin="246,203,0,0" VerticalAlignment="Top" Width="61"/>
+        <Label Grid.Column="2" Content="十進制" HorizontalAlignment="Left" Margin="246,281,0,0" VerticalAlignment="Top" Width="61"/>
+        <Button x:Name="calculateButton" Grid.Column="2" Content="calculate" HorizontalAlignment="Left" Margin="241,390,0,0" VerticalAlignment="Top" Height="88" Width="66" Click="calculateButton_Click"/>
+        <Button x:Name="insertButton" Grid.Column="2" Content="Insert DB&#xD;&#xA;" HorizontalAlignment="Left" Margin="380,357,0,0" VerticalAlignment="Top" Height="42" Width="200" Click="insertButton_Click" IsEnabled="False"/>
+        <TextBox x:Name="resultTextbox" Margin="44,40,399,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="64" FontSize="20" FlowDirection="LeftToRight" HorizontalScrollBarVisibility="Hidden"/>
+        <Button x:Name="clearButton" Grid.Column="1" Content="C" HorizontalAlignment="Left" Margin="71,390,0,0" VerticalAlignment="Top" Width="90" Height="80" FontSize="36" Click="clearButton_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="zeroButton" Content="0" HorizontalAlignment="Left" Margin="44,391,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="90" Height="80" FontSize="36" Click="Button_Click"/>
+        <Button Grid.Column="2" Content="&lt;-" HorizontalAlignment="Left" Margin="25,390,0,0" VerticalAlignment="Top" Width="90" Height="80" FontSize="36" Click="Button_Click_1"/>
+        <Button x:Name="divButton" Grid.Column="2" Content="/" HorizontalAlignment="Left" Margin="131,391,0,0" VerticalAlignment="Top" Width="90" Height="80" FontSize="36" Click="Operater_Click"/>
+        <Button x:Name="mulButton" Grid.Column="2" Content="*" HorizontalAlignment="Left" Margin="130,299,0,0" VerticalAlignment="Top" Width="90" Height="80" FontSize="36" Click="Operater_Click"/>
+        <Button x:Name="subButton" Grid.Column="2" Content="-" HorizontalAlignment="Left" Margin="132,207,0,0" VerticalAlignment="Top" Width="90" Height="80" FontSize="36" Click="Operater_Click"/>
+        <Button x:Name="addButton" Grid.Column="2" Content="+" HorizontalAlignment="Left" Margin="131,112,0,0" VerticalAlignment="Top" Width="90" Height="80" FontSize="36" Click="Operater_Click"/>
+        <Button x:Name="checkDbButton" Grid.Column="2" Content="check Db" HorizontalAlignment="Left" Margin="380,430,0,0" VerticalAlignment="Top" Height="40" Width="200" Click="checkDbButton_Click"/>
+
+    </Grid>
+</Window>
